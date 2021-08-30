@@ -17,6 +17,16 @@ app.use(express.urlencoded({
 }));
 // parse incoming JSON data
 app.use(express.json());
+// we can set up some more Express.js middleware that instructs the server to make 
+// certain files readily available and to not gate it behind a server endpoint.
+
+// We added some more middleware to our server and used the express.static() method.
+// The way it works is that we provide a file path to a location in our application( in this
+// case, the public folder) and instruct the server to make these files static 
+// resources.This means that all of our front - end code can now be accessed 
+// without having a specific server endpoint created for it!
+
+app.use(express.static('public'));
 
 function filterByQuery(query, animalsArray) {
     let personalityTraitsArray = [];
@@ -118,6 +128,28 @@ app.post('/api/animals', (req, res) => {
         res.json(animal);
     }
 
+});
+// Unlike most GET and POST routes that deal with creating or return JSON data, this
+// GET route has just one job to do, and that is to respond with an HTML page to 
+// display in the browser. So instead of using res.json(), we're using res.sendFile(),
+// and all we have to do is tell them where to find the file we want our server to 
+// read and send back to the client.
+
+app.get('/', (req, res) => {
+    res.sendFile(path.join(__dirname, './public/index.html'));
+});
+app.get('/animals', (req, res) => {
+    res.sendFile(path.join(__dirname, './public/animals.html'));
+});
+app.get('/zookeepers', (req, res) => {
+    res.sendFile(path.join(__dirname, './public/zookeepers.html'));
+});
+
+// A wildcard route used for when a user types an incorrect route.
+// The * will act as a wildcard, meaning any route that wasn 't previously defined 
+// will fall under this request and will receive the homepage as the response. 
+app.get('*', (req, res) => {
+    res.sendFile(path.join(__dirname, './public/index.html'));
 });
 
 app.listen(PORT, () => {

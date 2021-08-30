@@ -144,6 +144,15 @@
         "hungry"
       ],
       "id": "14"
+    },
+    {
+      "name": "Bird",
+      "species": "Small Bird",
+      "diet": "herbivore",
+      "personalityTraits": [
+        "zany"
+      ],
+      "id": "15"
     }
   ]
 }
