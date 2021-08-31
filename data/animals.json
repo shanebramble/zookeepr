@@ -153,6 +153,15 @@
         "zany"
       ],
       "id": "15"
+    },
+    {
+      "name": "Shane Wade",
+      "species": "Wolf",
+      "diet": "carnivore",
+      "personalityTraits": [
+        "hungry"
+      ],
+      "id": "16"
     }
   ]
 }
