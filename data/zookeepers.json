@@ -59,6 +59,24 @@
       "age": 64,
       "favoriteAnimal": "Rabbit",
       "id": "9"
+    },
+    {
+      "name": "Shane",
+      "age": 24,
+      "favoriteAnimal": "Lion",
+      "id": "10"
+    },
+    {
+      "name": "Cecil Lewis",
+      "age": 43,
+      "favoriteAnimal": "Wolf",
+      "id": "11"
+    },
+    {
+      "name": "Antonio",
+      "age": 56,
+      "favoriteAnimal": "Lion",
+      "id": "12"
     }
   ]
 }
